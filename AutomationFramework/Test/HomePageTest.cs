@@ -3,6 +3,7 @@ using OpenQA.Selenium.Edge;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using AutomationFramework.Source.Pages;
+using AutomationFramework.Core;
 
 namespace AutomationFramework.Test
 {
@@ -23,9 +24,11 @@ namespace AutomationFramework.Test
         public void SearchVideo()
         {
             HomePage hp = new HomePage(_driver);
-            
+            Wrappers wr = new Wrappers(_driver);
+
             _driver.Navigate().GoToUrl("https://www.youtube.com");
             hp.UseSearchBox("funny cat videos");
+            wr.WaitHowManySeconds(2);
             Assert.True(_driver.Title.Contains("funny") && _driver.Title.Contains("cat") && _driver.Title.Contains("videos"));
         }
 
