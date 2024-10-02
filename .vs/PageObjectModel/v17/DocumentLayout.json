@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\cosad\\source\\repos\\Selenium-C#\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1434B04-EAED-4416-85E4-77BBCD37836D}|TestProject1\\AutomationFramework.csproj|c:\\users\\cosad\\source\\repos\\selenium-c#\\testproject1\\test\\loginpagetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1434B04-EAED-4416-85E4-77BBCD37836D}|TestProject1\\AutomationFramework.csproj|solutionrelative:testproject1\\test\\loginpagetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1434B04-EAED-4416-85E4-77BBCD37836D}|TestProject1\\AutomationFramework.csproj|c:\\users\\cosad\\source\\repos\\selenium-c#\\testproject1\\source\\pages\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1434B04-EAED-4416-85E4-77BBCD37836D}|TestProject1\\AutomationFramework.csproj|solutionrelative:testproject1\\source\\pages\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1434B04-EAED-4416-85E4-77BBCD37836D}|TestProject1\\AutomationFramework.csproj|c:\\users\\cosad\\source\\repos\\selenium-c#\\testproject1\\source\\pages\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1434B04-EAED-4416-85E4-77BBCD37836D}|TestProject1\\AutomationFramework.csproj|solutionrelative:testproject1\\source\\pages\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1434B04-EAED-4416-85E4-77BBCD37836D}|TestProject1\\AutomationFramework.csproj|c:\\users\\cosad\\source\\repos\\selenium-c#\\testproject1\\test\\homepagetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1434B04-EAED-4416-85E4-77BBCD37836D}|TestProject1\\AutomationFramework.csproj|solutionrelative:testproject1\\test\\homepagetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28931D5D-A84A-485E-A0C9-1B233598D4B9}|Selenium-Tests\\AutomationFramework.csproj|c:\\users\\cosad\\source\\repos\\selenium-c#\\selenium-tests\\test\\homepagetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28931D5D-A84A-485E-A0C9-1B233598D4B9}|Selenium-Tests\\AutomationFramework.csproj|solutionrelative:selenium-tests\\test\\homepagetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,52 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LoginPageTest.cs",
-              "DocumentMoniker": "C:\\Users\\cosad\\source\\repos\\Selenium-C#\\TestProject1\\Test\\LoginPageTest.cs",
-              "RelativeDocumentMoniker": "TestProject1\\Test\\LoginPageTest.cs",
-              "ToolTip": "C:\\Users\\cosad\\source\\repos\\Selenium-C#\\TestProject1\\Test\\LoginPageTest.cs",
-              "RelativeToolTip": "TestProject1\\Test\\LoginPageTest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T03:38:32.739Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginPage.cs",
-              "DocumentMoniker": "C:\\Users\\cosad\\source\\repos\\Selenium-C#\\TestProject1\\Source\\Pages\\LoginPage.cs",
-              "RelativeDocumentMoniker": "TestProject1\\Source\\Pages\\LoginPage.cs",
-              "ToolTip": "C:\\Users\\cosad\\source\\repos\\Selenium-C#\\TestProject1\\Source\\Pages\\LoginPage.cs",
-              "RelativeToolTip": "TestProject1\\Source\\Pages\\LoginPage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T03:21:31.588Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "HomePageTest.cs",
-              "DocumentMoniker": "C:\\Users\\cosad\\source\\repos\\Selenium-C#\\TestProject1\\Test\\HomePageTest.cs",
-              "RelativeDocumentMoniker": "TestProject1\\Test\\HomePageTest.cs",
-              "ToolTip": "C:\\Users\\cosad\\source\\repos\\Selenium-C#\\TestProject1\\Test\\HomePageTest.cs",
-              "RelativeToolTip": "TestProject1\\Test\\HomePageTest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "DocumentMoniker": "C:\\Users\\cosad\\source\\repos\\Selenium-C#\\Selenium-Tests\\Test\\HomePageTest.cs",
+              "RelativeDocumentMoniker": "Selenium-Tests\\Test\\HomePageTest.cs",
+              "ToolTip": "C:\\Users\\cosad\\source\\repos\\Selenium-C#\\Selenium-Tests\\Test\\HomePageTest.cs",
+              "RelativeToolTip": "Selenium-Tests\\Test\\HomePageTest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T02:05:57.619Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HomePage.cs",
-              "DocumentMoniker": "C:\\Users\\cosad\\source\\repos\\Selenium-C#\\TestProject1\\Source\\Pages\\HomePage.cs",
-              "RelativeDocumentMoniker": "TestProject1\\Source\\Pages\\HomePage.cs",
-              "ToolTip": "C:\\Users\\cosad\\source\\repos\\Selenium-C#\\TestProject1\\Source\\Pages\\HomePage.cs",
-              "RelativeToolTip": "TestProject1\\Source\\Pages\\HomePage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T01:56:41.173Z"
+              "WhenOpened": "2024-10-02T20:04:08.047Z",
+              "EditorCaption": ""
             }
           ]
         }
