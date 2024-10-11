@@ -1,23 +1,25 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Edge;
-using WebDriverManager;
-using WebDriverManager.DriverConfigs.Impl;
 using AutomationFramework.Source.Pages;
 using AutomationFramework.Core;
+using static AutomationFramework.Utilities.Webdrivers;
+using AutomationFramework.Utilities;
+using System.Configuration;
+using Microsoft.Extensions.Configuration;
+using System.Runtime;
 
 namespace AutomationFramework.Test
 {
     public class HomePageTest
     {
         private IWebDriver _driver;
+        private string browserType;
+
+
 
         [SetUp]
         public void InitScript()
         {
-            new DriverManager().SetUpDriver(
-                new EdgeConfig(), version:"Latest"
-                );
-            _driver = new EdgeDriver();
+            _driver = getWebDriver(AppSettings.GetSetting("BrowserType"));
         }
 
         [Test]
@@ -28,7 +30,8 @@ namespace AutomationFramework.Test
 
             _driver.Navigate().GoToUrl("https://www.youtube.com");
             hp.UseSearchBox("funny cat videos");
-            wr.WaitHowManySeconds(2);
+            hp.WaitForChips(_driver);
+
             Assert.True(_driver.Title.Contains("funny") && _driver.Title.Contains("cat") && _driver.Title.Contains("videos"));
         }
 

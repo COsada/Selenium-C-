@@ -1,8 +1,8 @@
 ﻿using AutomationFramework.Source.Pages;
-using OpenQA.Selenium.Edge;
+using AutomationFramework.Utilities;
 using OpenQA.Selenium;
-using WebDriverManager.DriverConfigs.Impl;
-using WebDriverManager;
+using System.Configuration;
+using static AutomationFramework.Utilities.Webdrivers;
 
 namespace AutomationFramework.Test
 {
@@ -13,10 +13,7 @@ namespace AutomationFramework.Test
         [SetUp]
         public void InitScript()
         {
-            new DriverManager().SetUpDriver(
-                new EdgeConfig(), version: "Latest"
-                );
-            _driver = new EdgeDriver();
+            _driver = getWebDriver(AppSettings.GetSetting("Settings:BrowserType"));
         }
 
         [Test]

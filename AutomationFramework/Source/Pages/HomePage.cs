@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 
 namespace AutomationFramework.Source.Pages
@@ -13,6 +14,8 @@ namespace AutomationFramework.Source.Pages
         private IWebElement _searchButton;
         [FindsBy(How = How.XPath, Using = "//*[@id='buttons']/ytd-button-renderer")]
         private IWebElement _signInLink;
+        [FindsBy(How = How.Id, Using = "chips")]
+        private IWebElement _dumby;
 
         public HomePage(IWebDriver driver)
         {
@@ -29,6 +32,12 @@ namespace AutomationFramework.Source.Pages
         public void ClickSignInLink ()
         {
             _signInLink.Click();
+        }
+
+        public void WaitForChips(IWebDriver driver)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            wait.Until(d => _dumby.Displayed);
         }
     }
 }

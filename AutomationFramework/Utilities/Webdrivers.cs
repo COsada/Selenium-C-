@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AutomationFramework.Exceptions;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
@@ -7,62 +8,53 @@ using System.Security.Cryptography.X509Certificates;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 
-namespace AutomationFramework.Source.Pages
+namespace AutomationFramework.Utilities
 {
-    public class Webdrivers
+    public static class Webdrivers
     {
 
-        public IWebDriver _driver;
+        public static IWebDriver _driver;
 
         /*
         * Factory to instantiate a WebDriver object. It returns an instance of the driver (local invocation).
         */
-        public IWebDriver getWebDriver(string browserType)
+        public static IWebDriver getWebDriver(string browserType)
         {
-            switch (browserType)
+            if (_driver == null)
             {
-                case "Edge": case "edge":
-                    if (_driver == null)
-                    {
+                switch (browserType)
+                {
+                    case "Edge":
+                    case "edge":
                         new DriverManager().SetUpDriver(
                         new EdgeConfig(), version: "Latest"
                         );
                         _driver = new EdgeDriver();
                         return _driver;
-                    }
-                    else
-                    {
-                        return _driver;
-                    }
-                case "Chrome": case "chrome":
-                    if (_driver == null)
-                    {
+                    case "Chrome":
+                    case "chrome":
                         new DriverManager().SetUpDriver(
                         new ChromeConfig(), version: "Latest"
                         );
                         _driver = new ChromeDriver();
                         return _driver;
-                    }
-                    else
-                    {
-                        return _driver;
-                    }
-                case "Firefox": case "firefox":
-                    if (_driver == null)
-                    {
+                    case "Firefox":
+                    case "firefox":
                         new DriverManager().SetUpDriver(
                         new FirefoxConfig(), version: "Latest"
                         );
                         _driver = new FirefoxDriver();
                         return _driver;
-                    }
-                    else
-                    {
+                    default:
                         return _driver;
-                    }
-                default:
-                    return _driver;
+                }
             }
+            else
+            {
+                throw new InvalidNumberException(browserType);
+            }
+
+
         }
     }
 }

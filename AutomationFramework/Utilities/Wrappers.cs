@@ -8,15 +8,9 @@ using System.Threading.Tasks;
 
 namespace AutomationFramework.Core
 {
-    public class Wrappers
+    public class Wrappers (IWebDriver _driver)
     {
-        private IWebDriver _driver;
 
-        public Wrappers(IWebDriver driver)
-        {
-            _driver = driver;
-            PageFactory.InitElements(driver, this);
-        }
         public void WaitHowManySeconds(int seconds)
         {
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(seconds);
