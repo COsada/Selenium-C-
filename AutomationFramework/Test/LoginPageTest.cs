@@ -6,29 +6,15 @@ using static AutomationFramework.Utilities.Webdrivers;
 
 namespace AutomationFramework.Test
 {
-    public class LoginPageTest
+    public class LoginPageTest : BaseTest
     {
-        private IWebDriver _driver;
-
-        [SetUp]
-        public void InitScript()
-        {
-            _driver = getWebDriver(AppSettings.GetSetting("Settings:BrowserType"));
-        }
-
         [Test]
         public void SearchVideo()
         {
-            HomePage hp = new HomePage(_driver);
+            HomePage hp = new HomePage();
 
 
             
-        }
-
-        [TearDown]
-        public void Cleanup()
-        {
-            _driver.Dispose();
         }
     }
 }

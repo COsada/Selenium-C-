@@ -3,22 +3,18 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
-using System.Linq.Expressions;
-using System.Security.Cryptography.X509Certificates;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 
 namespace AutomationFramework.Utilities
 {
-    public static class Webdrivers
+    public class Webdrivers
     {
-
         public static IWebDriver _driver;
-
         /*
         * Factory to instantiate a WebDriver object. It returns an instance of the driver (local invocation).
         */
-        public static IWebDriver getWebDriver(string browserType)
+        public static IWebDriver GetDriver(string browserType)
         {
             if (_driver == null)
             {
@@ -26,32 +22,26 @@ namespace AutomationFramework.Utilities
                 {
                     case "Edge":
                     case "edge":
-                        new DriverManager().SetUpDriver(
-                        new EdgeConfig(), version: "Latest"
-                        );
+                        new DriverManager().SetUpDriver(new EdgeConfig(), version: "Latest");
                         _driver = new EdgeDriver();
                         return _driver;
                     case "Chrome":
                     case "chrome":
-                        new DriverManager().SetUpDriver(
-                        new ChromeConfig(), version: "Latest"
-                        );
+                        new DriverManager().SetUpDriver(new ChromeConfig(), version: "Latest");
                         _driver = new ChromeDriver();
                         return _driver;
                     case "Firefox":
                     case "firefox":
-                        new DriverManager().SetUpDriver(
-                        new FirefoxConfig(), version: "Latest"
-                        );
+                        new DriverManager().SetUpDriver(new FirefoxConfig(), version: "Latest");
                         _driver = new FirefoxDriver();
                         return _driver;
                     default:
-                        return _driver;
+                        throw new BrowserTypeNotSupported(browserType);
                 }
             }
             else
             {
-                throw new InvalidNumberException(browserType);
+                return _driver;
             }
 
 

@@ -26,7 +26,7 @@ namespace AutomationFramework.Source.Pages
 
         public void SignIn(string email, string password)
         {
-            HomePage hp = new HomePage(_driver);
+            HomePage hp = new HomePage();
             hp.ClickSignInLink();
             _emailBox.SendKeys(email);
             _emailNextButton.Click();

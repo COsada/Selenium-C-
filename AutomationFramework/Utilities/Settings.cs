@@ -14,19 +14,19 @@ namespace AutomationFramework.Utilities
 {
     public class AppSettings
     {
-        public static string GetSetting(string setting)
-        {
-            string browserType;
-            IConfiguration configuration = new ConfigurationBuilder().AddJsonFile("config.json", optional: true).Build();
 
-                switch (setting)
-                {
-                    case "BrowserType":
-                    browserType = configuration["Settings:BrowserType"];
-                    return browserType;
-                    default:
-                        return null;
-                }
+        static IConfiguration configuration = new ConfigurationBuilder().AddJsonFile("config.json", optional: true).Build();
+        public static string GetBrowserType()
+        {
+            return configuration["Settings:BrowserType"];
+        }
+        public static string GetUsername()
+        {
+            return configuration["Credentials:Username"];
+        }
+        public static string GetPassword()
+        {
+            return configuration["Credentials:Password"];
         }
     }
 }

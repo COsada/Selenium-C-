@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AutomationFramework.Utilities;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 
@@ -6,22 +7,12 @@ namespace AutomationFramework.Source.Pages
 {
     public class HomePage
     {
-        private IWebDriver _driver;
+        private IWebDriver _driver = Webdrivers.GetDriver(AppSettings.GetBrowserType());
 
-        [FindsBy(How = How.Name, Using = "search_query")]
-        private IWebElement _searchBox;
-        [FindsBy(How = How.Id, Using = "search-icon-legacy")]
-        private IWebElement _searchButton;
-        [FindsBy(How = How.XPath, Using = "//*[@id='buttons']/ytd-button-renderer")]
-        private IWebElement _signInLink;
-        [FindsBy(How = How.Id, Using = "chips")]
-        private IWebElement _dumby;
-
-        public HomePage(IWebDriver driver)
-        {
-            _driver = driver;
-            PageFactory.InitElements(driver, this);
-        }
+        private IWebElement _searchBox => _driver.FindElement(By.Name("search_query"));
+        private IWebElement _searchButton => _driver.FindElement(By.Id("search-icon-legacy"));
+        private IWebElement _signInLink => _driver.FindElement(By.XPath("//*[@id='buttons']/ytd-button-renderer"));
+        private IWebElement _dumby => _driver.FindElement(By.Id("chips"));
 
         public void UseSearchBox (string searchText)
         {
@@ -34,9 +25,9 @@ namespace AutomationFramework.Source.Pages
             _signInLink.Click();
         }
 
-        public void WaitForChips(IWebDriver driver)
+        public void WaitForChips(int time)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(time));
             wait.Until(d => _dumby.Displayed);
         }
     }
