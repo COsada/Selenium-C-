@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using AutomationFramework.Source.Pages;
-using AutomationFramework.Core;
 using AutomationFramework.Utilities;
 using System.Configuration;
 using Microsoft.Extensions.Configuration;
@@ -14,7 +13,6 @@ namespace AutomationFramework.Test
         public void SearchVideo()
         {
             HomePage hp = new HomePage();
-            Wrappers wr = new Wrappers(_driver);
             
             hp.UseSearchBox("funny cat videos");
             hp.WaitForChips(5);

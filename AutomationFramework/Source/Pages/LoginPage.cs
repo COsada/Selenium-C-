@@ -1,28 +1,18 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using AutomationFramework.Source.Pages;
+using AutomationFramework.Utilities;
 
 namespace AutomationFramework.Source.Pages
 {
     public class LoginPage
     {
-        private IWebDriver _driver;
+        private IWebDriver _driver = Webdrivers.GetDriver(AppSettings.GetBrowserType());
 
-        [FindsBy(How = How.Id, Using = "identifierId")]
-        private IWebElement _emailBox;
-        [FindsBy(How = How.XPath, Using = "//*[@id='identifierNext']/div/button")]
-        private IWebElement _emailNextButton;
-
-        [FindsBy(How = How.XPath, Using = "//*[@id='password']//input")]
-        private IWebElement _passwordBox;
-        [FindsBy(How = How.XPath, Using = "//*[@id='passwordNext']//button")]
-        private IWebElement _passwordNextButton;
-
-        public LoginPage(IWebDriver driver)
-        {
-            _driver = driver;
-            PageFactory.InitElements(driver, this);
-        }
+        private IWebElement _emailBox => _driver.FindElement(By.Id("identifierId"));
+        private IWebElement _emailNextButton => _driver.FindElement(By.XPath("//*[@id='identifierNext']/div/button"));
+        private IWebElement _passwordBox => _driver.FindElement(By.XPath("//*[@id='password']//input"));
+        private IWebElement _passwordNextButton => _driver.FindElement(By.XPath("//*[@id='passwordNext']//button"));
 
         public void SignIn(string email, string password)
         {
