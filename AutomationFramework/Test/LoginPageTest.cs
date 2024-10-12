@@ -13,8 +13,6 @@ namespace AutomationFramework.Test
         {
             HomePage hp = new HomePage();
 
-
-            
         }
     }
 }
