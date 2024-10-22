@@ -2,8 +2,13 @@
 	"Settings": {
 		"BrowserType": "Edge"
 	},
-	"Credentials": {
-		"Username": "Placeholder",
-		"Password": "Placeholder"
+	"TestVariables": {
+		"Youtube": {
+			"SearchedVideo": "funny cat videos"
+		},
+		"Heroku": {
+			"HomePageUrl": "https://the-internet.herokuapp.com/",
+			"AddRemovePageUrl": "https://the-internet.herokuapp.com/add_remove_elements/"
+		}
 	}
-}
+	}

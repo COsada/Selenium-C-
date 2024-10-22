@@ -22,17 +22,17 @@ namespace AutomationFramework.Utilities
                 {
                     case "Edge":
                     case "edge":
-                        new DriverManager().SetUpDriver(new EdgeConfig(), version: "Latest");
+                        //new DriverManager().SetUpDriver(new EdgeConfig(), version: "Latest");
                         _driver = new EdgeDriver();
                         return _driver;
                     case "Chrome":
                     case "chrome":
-                        new DriverManager().SetUpDriver(new ChromeConfig(), version: "Latest");
+                        //new DriverManager().SetUpDriver(new ChromeConfig(), version: "Latest");
                         _driver = new ChromeDriver();
                         return _driver;
                     case "Firefox":
                     case "firefox":
-                        new DriverManager().SetUpDriver(new FirefoxConfig(), version: "Latest");
+                        //new DriverManager().SetUpDriver(new FirefoxConfig(), version: "Latest");
                         _driver = new FirefoxDriver();
                         return _driver;
                     default:

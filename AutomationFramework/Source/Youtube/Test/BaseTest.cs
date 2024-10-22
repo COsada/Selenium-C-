@@ -2,12 +2,12 @@
 using AutomationFramework.Utilities;
 
 
-namespace AutomationFramework.Test
+namespace AutomationFramework.Source.Youtube.Test
 {
     public class BaseTest
     {
         public IWebDriver _driver;
-        String url = "https://www.youtube.com";
+        string url = "https://www.youtube.com";
 
         [SetUp]
         public void InitScript()
@@ -20,11 +20,14 @@ namespace AutomationFramework.Test
         [TearDown]
         public void Cleanup()
         {
-            try {
+            try
+            {
                 _driver.Dispose();
-            }catch (Exception ex){
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
-}
-}
+        }
+    }
 }
