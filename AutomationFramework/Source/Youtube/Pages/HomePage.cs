@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 
-namespace AutomationFramework.Source.Pages
+namespace AutomationFramework.Source.Youtube.Pages
 {
     public class HomePage
     {
@@ -14,13 +14,13 @@ namespace AutomationFramework.Source.Pages
         private IWebElement _signInLink => _driver.FindElement(By.XPath("//*[@id='buttons']/ytd-button-renderer"));
         private IWebElement _dumby => _driver.FindElement(By.Id("chips"));
 
-        public void UseSearchBox (string searchText)
+        public void UseSearchBox(string searchText)
         {
             _searchBox.SendKeys(searchText);
             _searchButton.Click();
         }
 
-        public void ClickSignInLink ()
+        public void ClickSignInLink()
         {
             _signInLink.Click();
         }

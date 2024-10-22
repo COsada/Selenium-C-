@@ -20,13 +20,22 @@ namespace AutomationFramework.Utilities
         {
             return configuration["Settings:BrowserType"];
         }
-        public static string GetUsername()
+    }
+    public class TestVariables
+    {
+        static IConfiguration configuration = new ConfigurationBuilder().AddJsonFile("config.json", optional: true).Build();
+        public static string GetYoutubeVideoName()
         {
-            return configuration["Credentials:Username"];
+            return configuration["TestVariables:Youtube:SearchedVideo"];
         }
-        public static string GetPassword()
+        public static string GetHerokuHomePageUrl()
         {
-            return configuration["Credentials:Password"];
+            return configuration["TestVariables:Heroku:HomePageUrl"];
+        }
+
+        public static string GetHerokuAddRemovePageUrl()
+        {
+            return configuration["TestVariables:Heroku:AddRemovePageUrl"];
         }
     }
 }
