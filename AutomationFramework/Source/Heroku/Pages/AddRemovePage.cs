@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Utilities;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Edge;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,6 +13,7 @@ namespace AutomationFramework.Source.Heroku.Pages
     public class AddRemovePage
     {
         private IWebDriver _driver = Webdrivers.GetDriver(AppSettings.GetBrowserType());
+        //private IWebDriver _driver = new EdgeDriver();
 
         private IWebElement _pageTitle => _driver.FindElement(By.XPath("//*[@id='content']/h3"));
         private IWebElement _addEleButton => _driver.FindElement(By.CssSelector("#content > div > button"));

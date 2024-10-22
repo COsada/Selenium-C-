@@ -1,5 +1,6 @@
 ﻿using AutomationFramework.Utilities;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 
@@ -8,6 +9,7 @@ namespace AutomationFramework.Source.Heroku.Pages
     public class HomePage
     {
         private IWebDriver _driver = Webdrivers.GetDriver(AppSettings.GetBrowserType());
+        //private IWebDriver _driver = new EdgeDriver();
 
         private IWebElement _pageTitle => _driver.FindElement(By.XPath("//*[@id='content']/h1"));
         private IWebElement _pageSubTitle => _driver.FindElement(By.XPath("//*[@id='content']/h2"));

@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using AutomationFramework.Utilities;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
 
 
 namespace AutomationFramework.Source.Heroku
@@ -13,6 +15,7 @@ namespace AutomationFramework.Source.Heroku
         public void InitScript()
         {
             _driver = Webdrivers.GetDriver(AppSettings.GetBrowserType());
+            //_driver = new EdgeDriver();
             _driver.Manage().Window.Maximize();
             _driver.Navigate().GoToUrl(url);
         }
