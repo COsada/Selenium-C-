@@ -2,19 +2,18 @@
 using AutomationFramework.Utilities;
 
 
-namespace AutomationFramework.Source.Youtube.Test
+namespace AutomationFramework.Source.Youtube
 {
     public class BaseTest
     {
         public IWebDriver _driver;
-        string url = "https://www.youtube.com";
 
         [SetUp]
         public void InitScript()
         {
             _driver = Webdrivers.GetDriver(AppSettings.GetBrowserType());
             _driver.Manage().Window.Maximize();
-            _driver.Navigate().GoToUrl("https://www.youtube.com");
+            _driver.Navigate().GoToUrl(TestVariables.GetYoutubeHomePageUrl());
         }
 
         [TearDown]

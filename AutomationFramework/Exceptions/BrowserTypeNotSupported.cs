@@ -11,5 +11,4 @@ namespace AutomationFramework.Exceptions
         public BrowserTypeNotSupported(string browserType)
             : base(String.Format("The following browser type is not supported by this framework. browserType: {0}", browserType)) { }
     }
-
 }

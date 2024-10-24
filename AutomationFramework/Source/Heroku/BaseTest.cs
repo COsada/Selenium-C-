@@ -25,7 +25,7 @@ namespace AutomationFramework.Source.Heroku
         {
             try
             {
-                _driver.Dispose();
+                _driver.Close();
             }
             catch (Exception ex)
             {
