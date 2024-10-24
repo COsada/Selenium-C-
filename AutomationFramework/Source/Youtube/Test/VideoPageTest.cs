@@ -7,16 +7,18 @@ using AutomationFramework.Source.Youtube.Pages;
 
 namespace AutomationFramework.Source.Youtube.Test
 {
-    public class HomePageTest : BaseTest
+    public class VideoPageTest : BaseTest
     {
         HomePage hp = new();
+        SearchPage sp = new();
 
         [Test]
-        public void SearchVideo()
+        public void CheckVideoOpens()
         {
-            hp.UseSearchBox(TestVariables.GetHerokuHomePageUrl());
-            hp.WaitForChips(5);
-            Assert.That(_driver.Title, Does.Contain(TestVariables.GetHerokuHomePageUrl()));
+            string searchText = TestVariables.GetYoutubeVideoName();
+
+            hp.UseSearchBox(searchText);
+            sp.WaitForChips(5);
         }
     }
 }

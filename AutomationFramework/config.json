@@ -4,6 +4,7 @@
 	},
 	"TestVariables": {
 		"Youtube": {
+			"HomePageUrl": "https://www.youtube.com/",
 			"SearchedVideo": "funny cat videos"
 		},
 		"Heroku": {

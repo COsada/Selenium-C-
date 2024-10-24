@@ -3,10 +3,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.IE;
-using System.Runtime.CompilerServices;
-using WebDriverManager;
-using WebDriverManager.DriverConfigs.Impl;
 
 namespace AutomationFramework.Utilities
 {
@@ -20,19 +16,7 @@ namespace AutomationFramework.Utilities
         {
             /*This is extremely janky, but without this tests will fail when running more then one at a time as
              once one test closes the browser, the next test will try to use this method, fail, and get hit by an ObjectDisposedException when it tries to interact with the browser.*/
-            bool hasDriverBeenClosed = false;
-            try
-            {
-                if (_driver != null)
-                {
-                    _driver.Manage().Window.Maximize();
-                    hasDriverBeenClosed = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                hasDriverBeenClosed = true;
-            }
+            bool hasDriverBeenClosed = CheckForPriorDrivers();
 
             /*Makes changes to below if-statement to get ride of the whole 'hasDriverBeenClosed' mess. Figure out a better check then '_driver == null' as that only 
              * checks if a driver HAS existed, not if one exists right now. As in, it gets confused if the driver has been made and then disposed, and treats it as if it's still open.*/
@@ -63,6 +47,23 @@ namespace AutomationFramework.Utilities
             {
                 return _driver;
             }
+        }
+
+        public static bool CheckForPriorDrivers()
+        {
+            try
+            {
+                if (_driver != null)
+                {
+                    _driver.Manage().Window.Maximize();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

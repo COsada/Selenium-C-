@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AutomationFramework.Source.Heroku.Pages
 {
-    public class AddRemovePage
+    public class AddRemovePage: ElementInteractivity
     {
         private IWebDriver _driver = Webdrivers.GetDriver(AppSettings.GetBrowserType());
         //private IWebDriver _driver = new EdgeDriver();
@@ -22,54 +22,31 @@ namespace AutomationFramework.Source.Heroku.Pages
 
         public bool CheckForTitle()
         {
-            if (_pageTitle.Displayed && _pageTitle.Enabled && _pageTitle.Text.Equals("Add/Remove Elements") && _pageTitle.Size.Width > 10 && _pageTitle.Size.Height > 10)
-            {
-                return true;
-            }
-            return false;
+            return CheckForElement(_pageTitle);
         }
         public bool CheckForAddEleButton()
         {
-            if (_addEleButton.Displayed && _addEleButton.Enabled && _addEleButton.Text.Equals("Add Element") && _addEleButton.Size.Width > 10 && _addEleButton.Size.Height > 10)
-            {
-                return true;
-            }
-            return false;
+            return CheckForElement(_addEleButton);
         }
         public void ClickAddEleButton()
         {
-            _addEleButton.Click();
+            ClickElement(_addEleButton);
         }
         public void ClickDeleteEleButtons()
         {
             for(int i = 0; i < _deleteEleButtonList.Count() + 1; i++)
             {
-                _deleteEleButtonList[0].Click();
+                ClickElement(_deleteEleButtonList[0]);
             }
         }
         public bool CheckForDeleteEleButton()
         {
-            if (_deleteEleButton.Displayed && _deleteEleButton.Enabled && _deleteEleButton.Text.Equals("Delete") && _deleteEleButton.Size.Width > 10 && _deleteEleButton.Size.Height > 10)
-            {
-                return true;
-            }
-            return false;
+            return CheckForElement(_deleteEleButton);
         }
         public bool CheckForNoDeleteEleButton()
         {
-            try
-            {
-                if (!_deleteEleButton.Displayed && !_deleteEleButton.Enabled && !_deleteEleButton.Text.Equals("Delete") && !(_deleteEleButton.Size.Width > 10) && !(_deleteEleButton.Size.Height > 10))
-                {
-                    return true;
-                }
-                return false;
-            }
-            catch (Exception ex)
-            {
-                return true;
-            }
-
+            try {return CheckForElement(_deleteEleButton);} 
+            catch{return true;}
         }
         public int CountDeleteEleButtons()
         {

@@ -24,6 +24,10 @@ namespace AutomationFramework.Utilities
     public class TestVariables
     {
         static IConfiguration configuration = new ConfigurationBuilder().AddJsonFile("config.json", optional: true).Build();
+        public static string GetYoutubeHomePageUrl()
+        {
+            return configuration["TestVariables:Youtube:HomePageUrl"];
+        }
         public static string GetYoutubeVideoName()
         {
             return configuration["TestVariables:Youtube:SearchedVideo"];
