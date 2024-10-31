@@ -21,25 +21,16 @@ namespace AutomationFramework.Utilities
             return configuration["Settings:BrowserType"];
         }
     }
-    public class TestVariables
+    public class TestData
     {
-        static IConfiguration configuration = new ConfigurationBuilder().AddJsonFile("config.json", optional: true).Build();
-        public static string GetYoutubeHomePageUrl()
+        static IConfiguration configuration = new ConfigurationBuilder().AddJsonFile("test-data.json", optional: true).Build();
+        public static string GetYoutubeInformation(string expectedInfo)
         {
-            return configuration["TestVariables:Youtube:HomePageUrl"];
+            return configuration["Youtube:" + expectedInfo];
         }
-        public static string GetYoutubeVideoName()
+        public static string GetHerokuInformation(string expectedInfo)
         {
-            return configuration["TestVariables:Youtube:SearchedVideo"];
-        }
-        public static string GetHerokuHomePageUrl()
-        {
-            return configuration["TestVariables:Heroku:HomePageUrl"];
-        }
-
-        public static string GetHerokuAddRemovePageUrl()
-        {
-            return configuration["TestVariables:Heroku:AddRemovePageUrl"];
+            return configuration["Heroku:" + expectedInfo];
         }
     }
 }

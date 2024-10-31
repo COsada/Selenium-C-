@@ -1,0 +1,24 @@
+﻿{
+	"Youtube": {
+			"HomePageUrl": "https://www.youtube.com/",
+			"SearchedVideo": "funny cat videos"
+	},
+	"Heroku": {
+		"Urls": {
+			"HomePage": "https://the-internet.herokuapp.com/",
+			"AddRemovePage": "https://the-internet.herokuapp.com/add_remove_elements/",
+			"BasicAuthPage": "https://the-internet.herokuapp.com/basic_auth"
+		},
+		"TestVariables": {
+			"HomePage": {
+				"HomePageTitle": "Welcome to the-internet",
+				"HomePageSubTitle": "Available Examples"
+			},
+			"BasicAuth": {
+				"Credentials": "https://admin:admin@the-internet.herokuapp.com/basic_auth",
+				"Title": "Basic Auth",
+				"Content": "Congratulations! You must have the proper credentials."
+			}
+		}
+	}
+}

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AutomationFramework.Source.Heroku.Pages
 {
-    public class AddRemovePage: ElementInteractivity
+    public class AddRemovePage
     {
         private IWebDriver _driver = Webdrivers.GetDriver(AppSettings.GetBrowserType());
         //private IWebDriver _driver = new EdgeDriver();
@@ -22,30 +22,30 @@ namespace AutomationFramework.Source.Heroku.Pages
 
         public bool CheckForTitle()
         {
-            return CheckForElement(_pageTitle);
+            return ElementInteractives.SearchElement(_pageTitle);
         }
         public bool CheckForAddEleButton()
         {
-            return CheckForElement(_addEleButton);
+            return ElementInteractives.SearchElement(_addEleButton);
         }
         public void ClickAddEleButton()
         {
-            ClickElement(_addEleButton);
+            ElementInteractives.ClickElement(_addEleButton);
         }
         public void ClickDeleteEleButtons()
         {
             for(int i = 0; i < _deleteEleButtonList.Count() + 1; i++)
             {
-                ClickElement(_deleteEleButtonList[0]);
+                ElementInteractives.ClickElement(_deleteEleButtonList[0]);
             }
         }
         public bool CheckForDeleteEleButton()
         {
-            return CheckForElement(_deleteEleButton);
+            return ElementInteractives.SearchElement(_deleteEleButton);
         }
         public bool CheckForNoDeleteEleButton()
         {
-            try {return CheckForElement(_deleteEleButton);} 
+            try {return ElementInteractives.SearchElement(_deleteEleButton);} 
             catch{return true;}
         }
         public int CountDeleteEleButtons()

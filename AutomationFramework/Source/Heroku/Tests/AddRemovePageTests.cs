@@ -14,16 +14,16 @@ namespace AutomationFramework.Source.Heroku.Tests
         AddRemovePage ar = new();
 
         [Test]
-        public void AddRemovePageTest()
+        public void AddRemoveElementsTest()
         {
             
-            hp.ClickAddRemoveLink();
+            hp.ClickHomePageLinkByGivenIndex(2);
 
             //Make sure that initial webelements that should be present are, and that those that shoyuldn't be are not.
             Assert.That(ar.CheckForTitle());
             Assert.That(ar.CheckForNoDeleteEleButton());
             Assert.That(ar.CheckForAddEleButton());
-            Assert.That(_driver.Url.Equals(TestVariables.GetHerokuAddRemovePageUrl()));
+            Assert.That(_driver.Url.Equals(TestData.GetHerokuInformation("Urls:AddRemovePage")));
 
             //Check that the 'Add Element' can add at least two elements to the page, then check to make sure both of the 'Delete' buttons that were added are deleted when pressed.
             ar.ClickAddEleButton();
