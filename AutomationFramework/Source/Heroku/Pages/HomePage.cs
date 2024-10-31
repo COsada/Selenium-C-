@@ -14,11 +14,11 @@ namespace AutomationFramework.Source.Heroku.Pages
         private IWebElement _pageTitle => _driver.FindElement(By.XPath("//*[@id='content']/h1"));
         private IWebElement _pageSubTitle => _driver.FindElement(By.XPath("//*[@id='content']/h2"));
         private IWebElement _listOfLinks => _driver.FindElement(By.XPath("//*[@id='content']/ul"));
-        private IWebElement _addRemoveLink => _driver.FindElement(By.XPath("//*[@id='content']//li[2]/a"));
+        private IWebElement _linkFromListByIndex;
 
         public bool CheckForTitle()
         {
-            if(_pageTitle.Displayed && _pageTitle.Enabled && _pageTitle.Text.Equals("Welcome to the-internet") && _pageTitle.Size.Width > 10 && _pageTitle.Size.Height > 10)
+            if(ElementInteractives.SearchElement(_pageTitle, "Welcome to the-internet"))
             {
                 return true;
             }
@@ -26,7 +26,7 @@ namespace AutomationFramework.Source.Heroku.Pages
         }
         public bool CheckForSubTitle()
         {
-            if (_pageSubTitle.Displayed && _pageSubTitle.Enabled && _pageSubTitle.Text.Equals("Available Examples") && _pageSubTitle.Size.Width > 10 && _pageSubTitle.Size.Height > 10)
+            if (ElementInteractives.SearchElement(_pageSubTitle, "Available Examples"))
             {
                 return true;
             }
@@ -34,24 +34,16 @@ namespace AutomationFramework.Source.Heroku.Pages
         }
         public bool CheckForListOfLinks()
         {
-            if (_listOfLinks.Displayed && _listOfLinks.Enabled && _listOfLinks.Size.Width > 10 && _listOfLinks.Size.Height > 10)
+            if (ElementInteractives.SearchElement(_listOfLinks))
             {
                 return true;
             }
             return false;
         }
-        public bool CheckForHomepageUrl()
+        public void ClickHomePageLinkByGivenIndex(int index)
         {
-            //Comeback here
-            if (_listOfLinks.Displayed && _listOfLinks.Enabled && _listOfLinks.Size.Width > 10 && _listOfLinks.Size.Height > 10)
-            {
-                return true;
-            }
-            return false;
-        }
-        public void ClickAddRemoveLink()
-        {
-            _addRemoveLink.Click();
+            _linkFromListByIndex = _driver.FindElement(By.XPath("//*[@id='content']//li[" + index + "]/a"));
+            _linkFromListByIndex.Click();
         }
     }
 }

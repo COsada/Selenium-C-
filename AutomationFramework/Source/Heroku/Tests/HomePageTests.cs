@@ -5,19 +5,19 @@ using System.Runtime;
 using AutomationFramework.Utilities;
 using AutomationFramework.Source.Heroku.Pages;
 
-namespace AutomationFramework.Source.Heroku.Test
+namespace AutomationFramework.Source.Heroku.Tests
 {
-    public class HomePageTest : BaseTest
+    public class HomePageTests : BaseTest
     {
         HomePage hp = new();
 
         [Test]
-        public void AccessHomePageTest()
+        public void HomePageTest()
         {
             Assert.That(hp.CheckForTitle());
             Assert.That(hp.CheckForSubTitle());
             Assert.That(hp.CheckForListOfLinks);
-            Assert.That(_driver.Url.Equals(TestVariables.GetHerokuHomePageUrl()));
+            Assert.That(_driver.Url.Equals(TestData.GetHerokuInformation("Urls:HomePage")));
         }
     }
 }

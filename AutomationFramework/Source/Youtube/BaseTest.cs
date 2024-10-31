@@ -13,7 +13,7 @@ namespace AutomationFramework.Source.Youtube
         {
             _driver = Webdrivers.GetDriver(AppSettings.GetBrowserType());
             _driver.Manage().Window.Maximize();
-            _driver.Navigate().GoToUrl(TestVariables.GetYoutubeHomePageUrl());
+            _driver.Navigate().GoToUrl(TestData.GetYoutubeInformation("HomePageUrl"));
         }
 
         [TearDown]

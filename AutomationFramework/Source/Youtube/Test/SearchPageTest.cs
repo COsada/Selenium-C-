@@ -15,11 +15,11 @@ namespace AutomationFramework.Source.Youtube.Test
         [Test]
         public void CheckSearchFunction()
         {
-            string searchText = TestVariables.GetYoutubeVideoName();
+            string searchText = TestData.GetYoutubeInformation("HomePageUrl");
 
-            Assert.That(_driver.Url, Does.StartWith(TestVariables.GetYoutubeHomePageUrl()));
+            Assert.That(_driver.Url, Does.StartWith(TestData.GetYoutubeInformation("HomePageUrl")));
             hp.UseSearchBox(searchText);
-            sp.WaitForChips(5);
+            sp = new();
             Assert.That(_driver.Title, Does.Contain(searchText));
         }
     }

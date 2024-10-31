@@ -9,7 +9,7 @@ namespace AutomationFramework.Source.Heroku
     public class BaseTest
     {
         public IWebDriver _driver;
-        string url = TestVariables.GetHerokuHomePageUrl();
+        string url = TestData.GetHerokuInformation("Urls:HomePage");
 
         [SetUp]
         public void InitScript()

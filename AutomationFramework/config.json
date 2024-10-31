@@ -1,15 +1,5 @@
 ﻿{
 	"Settings": {
 		"BrowserType": "Edge"
-	},
-	"TestVariables": {
-		"Youtube": {
-			"HomePageUrl": "https://www.youtube.com/",
-			"SearchedVideo": "funny cat videos"
-		},
-		"Heroku": {
-			"HomePageUrl": "https://the-internet.herokuapp.com/",
-			"AddRemovePageUrl": "https://the-internet.herokuapp.com/add_remove_elements/"
-		}
 	}
-	}
+}
